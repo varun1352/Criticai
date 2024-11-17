@@ -1,0 +1,2 @@
+FLASK_APP=src/marketing_campaign_critic/web/app.py
+FLASK_ENV=development

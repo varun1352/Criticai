@@ -1,0 +1,20 @@
+[project]
+name = "marketing_campaign_critic"
+version = "0.1.0"
+description = "marketing_campaign_critic using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.76.9,<1.0.0"
+]
+
+[project.scripts]
+marketing_campaign_critic = "marketing_campaign_critic.main:run"
+run_crew = "marketing_campaign_critic.main:run"
+train = "marketing_campaign_critic.main:train"
+replay = "marketing_campaign_critic.main:replay"
+test = "marketing_campaign_critic.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

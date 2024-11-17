@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <script src="{{ url_for('static', filename='js/progress.js') }}" defer></script>
+
+    <section class="form-section">
+        <h2>Enter Your Campaign Details</h2>
+        <div class="progress-bar">
+            <div class="progress" style="width: 0;"></div>
+        </div>
+        <form id="campaignForm" action="{{ url_for('run_crew') }}" method="post" enctype="multipart/form-data">
+    
+            <!-- Step 1: Campaign Details -->
+            <div class="form-step active">
+                <h2>Campaign Details</h2>
+                <label for="campaign_name">Campaign Name:</label>
+                <input type="text" id="campaign_name" name="campaign_name" required placeholder="Enter the campaign name">
+    
+                <label for="company_name">Company Name:</label>
+                <input type="text" id="company_name" name="company_name" required placeholder="Enter the company name">
+    
+                <label for="campaign_description">Campaign Description:</label>
+                <textarea id="campaign_description" name="campaign_description" required placeholder="Describe the campaign objectives, message, and theme" rows="4"></textarea>
+                
+                <button type="button" class="cta-button next-button">Next</button>
+            </div>
+    
+            <!-- Step 2: Product Details -->
+            <div class="form-step">
+                <h2>Product Details</h2>
+                <label for="product_name">Product Name:</label>
+                <input type="text" id="product_name" name="product_name" required placeholder="Enter the product name">
+    
+                <label for="product_description">Product Description:</label>
+                <textarea id="product_description" name="product_description" required placeholder="Describe the product, its features, and benefits" rows="4"></textarea>
+    
+                <button type="button" class="cta-button back-button">Back</button>
+                <button type="button" class="cta-button next-button">Next</button>
+            </div>
+    
+            <!-- Step 3: Target Audience -->
+            <div class="form-step">
+                <h2>Target Audience</h2>
+                <label for="age_group">Age Group:</label>
+                <select id="age_group" name="age_group" required>
+                    <option value="" disabled selected>Select age group</option>
+                    <option value="18-25">18-25</option>
+                    <option value="26-35">26-35</option>
+                    <option value="36-45">36-45</option>
+                    <option value="46-60">46-60</option>
+                    <option value="60+">60+</option>
+                </select>
+    
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required placeholder="Enter geographic location">
+    
+                <label for="interests">Interests:</label>
+                <textarea id="interests" name="interests" required placeholder="Enter interests" rows="3"></textarea>
+    
+                <label for="income_bracket">Income Bracket:</label>
+                <select id="income_bracket" name="income_bracket" required>
+                    <option value="" disabled selected>Select income bracket</option>
+                    <option value="Low">Low</option>
+                    <option value="Middle">Middle</option>
+                    <option value="High">High</option>
+                </select>
+                
+                <button type="button" class="cta-button back-button">Back</button>
+                <button type="button" class="cta-button next-button">Next</button>
+            </div>
+    
+            <!-- Step 4: Select Agent -->
+            <div class="form-step">
+                <h2>Select Agent</h2>
+                <label for="base-agent">Select Existing Agents to Customize:</label>
+                <select id="base-agent" name="base_agent[]" multiple>
+                    <option value="young_adult_reviewer">Young Adult Reviewer</option>
+                    <option value="senior_reviewer">Senior Reviewer</option>
+                    <option value="international_reviewer">International Reviewer</option>
+                    <option value="middle_income_reviewer">Middle Income Reviewer</option>
+                    <option value="diverse_background_reviewer">Diverse Background Reviewer</option>
+                </select>
+                <button type="button" class="cta-button">Customize or Add New Agent</button>
+    
+                <button type="button" class="cta-button back-button">Back</button>
+                <button type="submit" class="cta-button">Submit Campaign</button>
+            </div>
+        </form>
+        <script>
+            function addAgent() {
+                const agentContainer = document.getElementById("agent-container");
+                const agentDiv = document.createElement("div");
+                agentDiv.classList.add("agent");
+    
+                agentDiv.innerHTML = `
+                    <input type="text" name="agent_name[]" placeholder="Agent Name" required>
+                    <input type="text" name="agent_role[]" placeholder="Role" required>
+                    <input type="text" name="agent_goal[]" placeholder="Goal" required>
+                    <button type="button" onclick="removeAgent(this)">X</button>
+                `;
+                agentContainer.appendChild(agentDiv);
+            }
+    
+            function removeAgent(button) {
+                button.parentElement.remove();
+            }
+        </script>
+        <script>
+            document.querySelector('.cta-button').addEventListener('click', function (e) {
+                const inputs = document.querySelectorAll('input[required], textarea[required], select[required]');
+                let valid = true;
+        
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        input.classList.add('error');
+                        valid = false;
+                    } else {
+                        input.classList.remove('error');
+                    }
+                });
+            });
+        
+            // Remove error highlight on input focus
+            document.querySelectorAll('input, textarea, select').forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.classList.remove('error');
+                });
+            });
+        </script>
+    </section>
+{% endblock %}

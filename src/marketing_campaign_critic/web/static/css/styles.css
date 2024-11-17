@@ -1,0 +1,1040 @@
+/* Root Variables for Theming */
+:root {
+    /* Primary Colors */
+/* Updated Primary and Secondary Colors */
+    --primary-color: #3A4DF0; /* Slightly brighter blue */
+    --primary-dark: #243BCC; /* Better contrast in dark mode */
+    --primary-light: #a2abff; /* Softer highlight for buttons */
+
+    --secondary-color: #1DBF73; /* A richer green */
+    --secondary-dark: #15905C; /* Darker green for hover states */
+    --secondary-light: #42D79E; /* Light green for accents */
+    
+    /* Neutral Colors */
+    --bg-light: #f9f9fc; /* Softer light background */
+    --bg-dark: #12131A; /* Darker night mode background */
+    --text-light: #1F2937; /* Darker text for better contrast */
+    --text-dark: #F9FAFB; /* Softer text in night mode */
+    
+    /* Updated font sizes */
+    --text-xs: 0.875rem;
+    --text-sm: 1rem;
+    --text-base: 1.125rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 1.875rem;
+    --text-3xl: 2.25rem;
+
+    /* Accents */
+    --accent-blue: #60A5FA;
+    --accent-purple: #8B5CF6;
+    --accent-teal: #2DD4BF;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem; /* Medium spacing for balance */
+    --spacing-lg: 1rem; /* Larger gap for button placement */
+    --spacing-xl: 2rem;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    --dark-bg-primary: #1a1a2e;
+    --dark-bg-secondary: #2a2a3c;
+    --dark-border: #3a3a4c;
+  }
+  
+  /* Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--bg-light);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%; /* Full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+}
+
+main {
+    flex: 1; /* Allow content to grow and push footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Flexbox alignment for the body */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0; /* Remove extra margin caused by header */
+    /* padding-top: 60px; Create space for the sticky header */
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--bg-light);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    margin-left: var(--spacing-md); /* Adjust logo spacing */
+}
+
+header .nav-list {
+    margin-right: var(--spacing-md); /* Adjust nav spacing */
+}
+
+  
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+  .logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: opacity var(--transition-fast);
+  }
+  
+  .logo h1:hover {
+    opacity: 0.9;
+  }
+  
+  /* Navigation */
+  .nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+  }
+  
+.nav-list a:hover {
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+  
+.hero-section {
+    background: linear-gradient(135deg, rgba(45, 59, 240, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 12px;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+    text-align: center;
+    box-shadow: var(--shadow-md); /* Add shadow for a lifted effect */
+}
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h2 {
+    font-size: var(--text-3xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-section p {
+    font-size: var(--text-lg);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-section .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.hero-section .cta-button {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg); /* Adjust padding */
+    border: none;
+    border-radius: 8px;
+    font-size: var(--text-base);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-section .cta-button:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    transform: scale(1.05);
+}
+
+.key-features {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) auto;
+    max-width: 800px; /* Align with the hero section */
+}
+
+.key-feature-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md);
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.key-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* Center and Resize the Form */
+.form-section {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-md) auto; /* Adjust vertical space */
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    max-width: 600px; 
+}
+
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border-radius: 6px;
+    margin-bottom: var(--spacing-md);
+    box-sizing: border-box;
+    background-color: var(--dark-bg-secondary);
+    color: var(--text-dark);
+    border: 1px solid var(--dark-border);
+}
+  
+  label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+  }
+  
+/* Default styles */
+input[type="text"], textarea, select {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-base);
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: var(--bg-light); /* Match the container background */
+    color: var(--text-light); /* Set a readable text color */
+    transition: all var(--transition-normal);
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+    background-color: var(--bg-light);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(45, 59, 240, 0.1);
+}
+
+/* Light Mode Styles */
+body.light-mode .form-section {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode input[type="text"], 
+body.light-mode textarea, 
+body.light-mode select {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .form-section {
+    background-color: var(--dark-bg-primary); /* Dark mode background */
+    color: var(--text-dark); /* Dark mode text */
+}
+
+body.dark-mode input[type="text"], 
+body.dark-mode textarea, 
+body.dark-mode select {
+    background-color: #444;
+    color: #fff;
+    border-color: #666;
+}
+
+/* Highlight error fields */
+input.error, textarea.error, select.error {
+    border-color: red;
+    background-color: #ffe6e6;
+}
+
+/* Center the button and improve its appearance */
+.cta-button {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    color: var(--text-dark);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    border-radius: 8px;
+    font-size: var(--text-base);
+    text-align: center;
+    text-decoration: none;
+    margin: var(--spacing-lg) auto; /* Add spacing around the button */
+    display: block; /* Ensure it takes up its own line */
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    /* margin-top: var(--spacing-lg); /* Add space above */
+    /*margin-bottom: var(--spacing-lg); Add space below */
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    transform: scale(1.05);
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+  
+.cta-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: var(--spacing-md);
+    font-weight: 500;
+}
+  
+.results-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.feedback-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Card Adjustments */
+.card {
+    background: var(--bg-light);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(45, 59, 240, 0.1);
+    transition: all var(--transition-normal);
+    color: var(--text-light); /* Use variable for consistency */
+}
+
+body.dark-mode .card {
+    background: var(--dark-bg-secondary);
+    color: var(--dark-text-light); /* Corrected from `vard(--text-dark)` */
+}
+
+.card-header {
+    background: linear-gradient(135deg, rgba(45, 59, 240, 0.05), rgba(139, 92, 246, 0.05));
+    padding: var(--spacing-lg);
+    border-radius: 16px 16px 0 0;
+}
+
+body.dark-mode .card-header h5 {
+    color: var(--dark-primary-color); /* Adjusted for better visibility */
+}
+
+/* Improve alignment of all card headers */
+.card-header h5 {
+    font-size: 1.2rem; /* Consistent font size for headers */
+    font-weight: 600;
+    text-align: left;
+    margin-left: 1.5rem; /* Align header text correctly */
+}
+
+.card-body {
+    padding: var(--spacing-xl);
+    font-size: var(--text-base);
+    color: var(--text-dark); /* Light mode */
+}
+
+body.dark-mode .card-body {
+    color: var(--dark-text-light); /* Dark mode */
+}
+  
+/* About Page */
+/* Ensure the about section fills the viewport */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content properly */
+    align-items: center;
+    height: calc(100vh - var(--spacing-lg)); /* Adjust to fit within the viewport */
+    padding: var(--spacing-lg); /* Ensure padding for content */
+    overflow-y: hidden;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(45, 59, 240, 0.05), rgba(139, 92, 246, 0.05));
+    text-align: center;
+    /* gap: var(--spacing-lg); Add spacing between elements */
+    position: relative;
+    padding-top:3%;
+    padding-bottom: -5%
+}
+
+/* Add a subtle decorative background */
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%; /* Restrict to 100% of the section */
+    height: 100%; /* Match section height */
+    background: radial-gradient(circle, rgba(45, 59, 240, 0.05), rgba(139, 92, 246, 0.1));
+    z-index: -1; /* Keep it in the background */
+    transform: translate(-50%, 0); /* Center align */
+    opacity: 0.5;
+}
+
+.about-section h2 {
+    margin-bottom: var(--spacing-md); /* Reduce gap after heading */
+    text-align: center;
+    margin: 0 0 var(--spacing-md) 0; /* Remove excess margin */
+    font-size: var(--text-2xl); /* Ensure the size fits well */
+}
+  
+/* Improve the content section appearance */
+.content-section {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(45, 59, 240, 0.1);
+    max-width: 800px; /* Centered and constrained width */
+    text-align: left; /* Center align text */
+}
+
+.content-section h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--text-lg);
+}
+
+.content-section p,
+.content-section ul {
+    font-size: var(--text-base);
+    color: var(--text-light);
+}
+
+.content-section ul {
+    padding-left: var(--spacing-md); /* Align bullet points properly */
+}
+
+.content-section ul li {
+    margin-bottom: var(--spacing-xs); /* Reduce gap between bullets */
+}
+
+.content-section:not(:last-child) {
+    border-bottom: 2px dashed var(--primary-light);
+}
+
+/* Add hover animation for sections */
+.content-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+/* About Page - Dark Mode */
+body.dark-mode {
+    background-color: var(--dark-bg-primary);
+    color: var(--text-dark);
+}
+
+body.dark-mode .form-section {
+    background-color: #333; /* Darker background for dark mode */
+    color: #fff; /* Lighter text for contrast */
+}
+
+body.dark-mode h2, body.dark-mode h3, body.dark-mode label {
+    color: var(--primary-color); /* Ensure all headings and labels are readable */
+}
+
+body.dark-mode .about-section {
+    background-color: var(--dark-bg-primary);
+    color: var(--text-dark);
+}
+
+body.dark-mode .content-section {
+    background-color: var(--dark-bg-secondary);
+    color: var(--text-dark);
+    border: 1px solid var(--dark-border);
+}
+
+body.dark-mode h2, body.dark-mode h3, body.dark-mode p , body.dark-mode li{
+    color: var(--text-dark);
+}
+
+body.dark-mode .cta-button {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    color: var(--text-dark);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .cta-button:hover {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    color: white;
+}
+
+  
+/* Show hamburger on small screens */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide nav links by default */
+    }
+
+    .nav-list.active {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 100%; /* Place below header */
+        left: 0;
+        width: 100%; /* Full width for dropdown */
+        background-color: var(--bg-light);
+        box-shadow: var(--shadow-md);
+        padding: var(--spacing-md);
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger button */
+    }
+    .hero-section {
+        padding: var(--spacing-lg);
+    }
+
+    .hero-section h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .hero-section p {
+        font-size: var(--text-base);
+    }
+
+    .cta-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: var(--spacing-md); /* Reduce space between buttons */
+    }
+}
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .hero-section,
+  .form-section,
+  .results-container,
+  .about-section {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  /* Agent Section Styling */
+.agent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 1rem;
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-md);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.agent input {
+    margin: 0;
+}
+
+.agent button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.agent button:hover {
+    background-color: #dc2626;
+    transform: rotate(90deg);
+}
+
+.features-section {
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.feature {
+    max-width: 250px;
+    padding: var(--spacing-md);
+    background: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast);
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+.feature h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature p {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+}
+
+
+/* Logo Styles */
+.logo {
+    font-size: var(--text-lg);
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: var(--spacing-lg);
+}
+
+/* Navigation Menu Styles */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+    margin: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 6px;
+}
+
+.nav-list a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Night Mode Toggle */
+#night-mode-toggle {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#night-mode-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+    background: var(--primary-dark);
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    background: none;
+    border: none;
+    font-size: var(--text-2xl);
+    cursor: pointer;
+    margin-right: var(--spacing-lg);
+}
+
+section {
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-lg);
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+button#night-mode-toggle {
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: var(--text-sm);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button#night-mode-toggle:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+footer {
+    color: var(--text-light);
+    background-color: var(--bg-light);
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-size: var(--text-sm);
+    transition: color var(--transition-normal), background-color var(--transition-normal);
+}
+
+footer p {
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+    color: var(--text-light); /* Ensures consistency in text color */
+}
+
+footer .footer-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 var(--spacing-sm);
+    font-weight: 600; /* Make the links more visible */
+}
+
+footer .footer-nav a:hover {
+    color: var(--primary-light); /* Lighter color on hover */
+}
+
+footer a {
+    color: var(--primary-color); /* Ensure consistent link colors */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--primary-light); /* Lighter hover effect */
+}
+
+/* Additional Styles for Dark Mode */
+body.dark-mode footer {
+    background-color: var(--dark-bg); /* Dark mode footer background */
+    color: var(--text-dark); /* Ensure footer text is visible in dark mode */
+}
+
+body.dark-mode footer .footer-nav a {
+    color: var(--secondary-light); /* Adjusted for better visibility in dark mode */
+}
+
+body.dark-mode footer .footer-nav a:hover {
+    color: var(--primary-dark); /* Slightly darker on hover in dark mode */
+}
+
+/* Optional Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Progress Bar Container */
+.progress-bar {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    max-width: 600px; /* Align with the form width */
+    background-color: var(--bg-light); /* Match the form's light mode background */
+    border-radius: 5px;
+    overflow: hidden;
+    margin: var(--spacing-sm) auto; /* Center the bar */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bar Indicator */
+.progress-bar .progress {
+    height: 100%;
+    width: 0%; /* Start with 0% */
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.3s ease-in-out;
+}
+
+/* Add a percentage label inside the progress bar */
+.progress-bar-label {
+    position: absolute;
+    top: -25px; /* Position above the progress bar */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+
+/* Form Steps */
+.form-step {
+    display: none; /* Only show the active step */
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--bg-light);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.5s ease; /* Smooth fade-in for steps */
+    margin-top: var(--spacing-md); /* Reduce margin */
+
+}
+
+.form-step.active {
+    display: flex; /* Show the active step */
+}
+
+/* Optional Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input.error, textarea.error, select.error {
+    border-color: red;
+    box-shadow: 0 0 5px red;
+}
+
+/* Light Mode */
+body.light-mode h2 {
+    color: var(--primary-color); /* Ensure headings are dark in light mode */
+}
+
+/* Dark Mode */
+body.dark-mode h2 {
+    color: var(--primary-light); /* Ensure headings are light in dark mode */
+}
+
+/* Override for form section headings */
+.form-section h2 {
+    font-size: 1.5rem; /* Set an appropriate size */
+    font-weight: bold;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    color: var(--primary-color); /* Ensure visibility */
+}
+
+body.dark-mode .form-section h2 {
+    color: var(--primary-color); /* Ensure visibility in dark mode */
+}
+
+/* General textarea styling */
+textarea {
+    resize: horizontal; /* Allow resizing only horizontally */
+    max-width: 100%; /* Prevent overflow beyond its container */
+    min-width: 100%; /* Maintain the initial width of the textarea */
+    padding: var(--spacing-sm); /* Add internal padding */
+    line-height: 1.5; /* Ensure proper text spacing */
+    border-radius: 6px; /* Consistent rounded corners */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+/* For light mode */
+body.light-mode textarea {
+    color: #000; /* Black text for readability in light mode */
+    background-color: #fff; /* Light background for light mode */
+    border: 1px solid var(--light-border); /* Define border color */
+}
+
+/* For dark mode */
+body.dark-mode textarea {
+    color: #fff; /* White text for readability in dark mode */
+    background-color: #333; /* Dark background for dark mode */
+    border: 1px solid var(--dark-border); /* Define border color */
+}
+
+/* Add focus styles */
+textarea:focus {
+    outline: none; /* Remove default focus outline */
+    border: 2px solid var(--primary-color); /* Highlight the border */
+    box-shadow: 0 0 5px var(--primary-color-light); /* Add a subtle glow */
+}
+
+
+/* Light Mode */
+body.light-mode .results-section {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark Mode */
+body.dark-mode .results-section {
+    background-color: #222222; /* Darker background */
+    color: #ffffff; /* Lighter text for readability */
+}
+
+body.dark-mode h2 {
+    color: #f5f5f5;
+}
+
+/* Dropdown Styles */
+.dropdown-container {
+    margin-bottom: 1rem;
+}
+
+.dropdown-header {
+    background-color: #f0f0f0; /* Light mode background */
+    color: #333; /* Dark text */
+    border: 1px solid #ccc;
+    padding: 1.2rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 1.2rem; /* Larger font size */
+    font-weight: 600; /* Make the text bold */
+}
+
+body.dark-mode .dropdown-header {
+    background-color: #444; /* Darker background for dark mode */
+    color: #fff; /* White text for readability */
+}
+
+.dropdown-header:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+.dropdown-header.active .dropdown-arrow {
+    transform: rotate(180deg); /* Flip arrow on active */
+}
+
+.dropdown-content {
+    display: none;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-size: 1rem; /* Consistent font size */
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    line-height: 1.5; /* Improve text readability */
+    padding-left: 1.5rem; /* Align text properly with dropdown header */
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #444; /* Dark mode background */
+    color: #fff; /* Light text */
+}
+
+/* Master and Agent Feedback Section Headers */
+h2, h3 {
+    color: #333; /* Default light mode */
+}
+
+body.dark-mode h2, body.dark-mode h3 {
+    color: #fff; /* White for dark mode */
+}
+
+/* Markdown Content */
+.markdown-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    
+}
+
+body.dark-mode .markdown-content {
+    color: #eee; /* Ensure visibility in dark mode */
+}
+
+/* Fix card stacking */
+.card {
+    position: relative;
+    z-index: 1;
+}

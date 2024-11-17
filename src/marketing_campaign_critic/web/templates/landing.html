@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="hero-section">
+        <h2>Welcome to Critic.ai</h2>
+        <p>Your AI-driven marketing feedback tool that helps you optimize campaigns with real-time insights.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('index') }}" class="cta-button">Test the Product</a>
+        </div>
+    </section>
+    <section class="features-section">
+        <h3>Key Features</h3>
+        <div class="features-container">
+            <div class="feature">
+                <h4>AI-Driven Insights</h4>
+                <p>Gain real-time feedback with AI simulations for diverse demographics.</p>
+            </div>
+            <div class="feature">
+                <h4>Fast and Accurate</h4>
+                <p>Powered by Cerebras and CrewAI for lightning-fast analytics and insights.</p>
+            </div>
+            <div class="feature">
+                <h4>Easy Integration</h4>
+                <p>Get actionable insights in minutes with a simple interface.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

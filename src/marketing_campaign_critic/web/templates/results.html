@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="results-container">
+    <h2>Feedback Results</h2>
+
+    <!-- Master Review Section -->
+    <div class="feedback-section">
+        <h3>Master Review Summary</h3>
+        <div class="card">
+            <div class="card-body markdown-content">
+                {{ feedback_reports[0].content | safe }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Agent-Specific Feedback Section -->
+    <div class="feedback-section">
+        <h3>Agent-Specific Feedback</h3>
+        <div id="agent-feedbacks">
+            {% for feedback in feedback_reports[1:] %}
+            <div class="dropdown-container">
+                <button class="dropdown-header" data-target="dropdown-{{ loop.index }}">
+                    {{ feedback.name }} Feedback
+                    <span class="dropdown-arrow">&#9660;</span>
+                </button>
+                <div id="dropdown-{{ loop.index }}" class="dropdown-content">
+                    <div class="markdown-content">
+                        {{ feedback.content | safe }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Night Mode Toggle Button -->
+    <button id="toggle-mode" class="cta-button">Toggle Night Mode</button>
+</section>
+
+<script>
+    // Dropdown functionality
+    document.querySelectorAll('.dropdown-header').forEach((header) => {
+        header.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-target');
+            const dropdownContent = document.getElementById(targetId);
+            const isOpen = dropdownContent.style.display === 'block';
+
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown-content').forEach((content) => {
+                content.style.display = 'none';
+            });
+
+            // Open the clicked dropdown if not already open
+            if (!isOpen) {
+                dropdownContent.style.display = 'block';
+            }
+        });
+    });
+
+    // Toggle Night Mode
+    const toggleMode = document.getElementById('toggle-mode');
+    toggleMode.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="about-section">
+        <h2>About Critic.ai</h2>
+
+        <div class="content-section">
+            <h3>The Challenge</h3>
+            <p>Small businesses often struggle with getting diverse feedback on their marketing campaigns. Traditional methods are expensive and time-consuming. Our tool simplifies this by providing rapid, AI-driven feedback.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Technology Stack</h3>
+            <ul>
+                <li><strong>CrewAI</strong>: Automates AI simulations for diverse demographic feedback in real-time.</li>
+                <li><strong>Cerebras</strong>: Uses high-performance compute to handle complex AI models and run simulations faster.</li>
+                <li><strong>Flask</strong>: Powers the backend, handling user requests, data processing, and AI models integration.</li>
+                <li><strong>Python</strong>: The core language for machine learning models and backend development.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>How It Works</h3>
+            <p>Simply input the details of your marketing campaign, define your target audience, and receive personalized feedback based on demographic insights. The tool helps you quickly identify what works and areas that need improvement.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>About the Developer</h3>
+            <p>Developed by somebody who doesnt know shit about marketing but decided to make something closely related to it for a Hackathon in NYC. He will not be keeping this updated unless he finds a pot of gold, probably wont do frontend ever again in his life. Anyways, go try this website out, Thanks :')</p>
+        </div>
+
+        <a href="{{ url_for('landing') }}" class="cta-button">Back to Home</a>
+    </section>
+{% endblock %}
