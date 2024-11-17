@@ -64,7 +64,7 @@ Contributions are what make the open source community such an amazing place to l
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
-Varun Deliwala - [your-email@example.com](mailto:your-email@example.com) - email address
+Varun Deliwala - [your-email@example.com](mailto:varundeliwala@gmail.com) - email address
 
 Project Link: [https://github.com/varun1352/Critic.ai](https://github.com/varun1352/Critic.ai)
 
