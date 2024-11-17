@@ -1,54 +1,77 @@
-# MarketingCampaignCritic Crew
+# Critic.ai
 
-Welcome to the MarketingCampaignCritic Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+## Overview
+Critic.ai is a sophisticated marketing campaign analysis tool designed to simulate and critique marketing campaigns using AI-driven insights. The application leverages advanced AI models to provide demographic-specific feedback, making it an invaluable asset for small-scale agencies and individual marketers seeking to optimize their marketing strategies and enhance campaign effectiveness.
 
-## Installation
+## Features
+- **Demographic-Specific Analysis**: Tailors feedback based on different demographic profiles to provide targeted insights into the potential reception of marketing campaigns.
+- **Comprehensive Feedback**: Combines the capabilities of various AI agents to critique different aspects of a campaign, from visual appeal to content relevance.
+- **Intuitive User Interface**: Features a user-friendly interface that makes it easy for users to input campaign details and receive structured feedback.
+- **Scalable Architecture**: Built to handle multiple users and sessions simultaneously, ensuring a responsive experience across various devices.
 
-Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## Technology Stack
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Flask (Python)
+- **AI Models**: Integrated with CrewAI for advanced data processing and analysis.
+- **Database**: (Optional - describe any database used like MySQL, PostgreSQL, etc.)
+- **Deployment**: Docker, (and any cloud platforms used, like AWS, GCP, etc.)
 
-First, if you haven't already, install uv:
+## Getting Started
 
-```bash
-pip install uv
+### Prerequisites
+- Python 3.11 or higher
+- Flask
+- crewai
+
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/varun1352/Critic.ai.git
+   cd Critic.ai
+   pip install flask
+   pip install crewai
+   ```
+
+2. **Set up a virtual environment** (optional but recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. **Environment Variables**:
+   Set up the necessary environment variables or use a `.env` file to load them.
+
+4. **Run the application**:
+   ```bash
+   flask run
+   ```
+
+## Usage
+After starting the application, navigate to `http://localhost:5000` in your web browser to start using Critic.ai. Follow the on-screen instructions to input your marketing campaign details and receive feedback.
+
+## Contributing
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+Varun Deliwala - [your-email@example.com](mailto:your-email@example.com) - email address
+
+Project Link: [https://github.com/varun1352/Critic.ai](https://github.com/varun1352/Critic.ai)
+
+## Acknowledgements
+- CrewAI
+- Flask
+- Contributors who participated in this project.
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/marketing_campaign_critic/config/agents.yaml` to define your agents
-- Modify `src/marketing_campaign_critic/config/tasks.yaml` to define your tasks
-- Modify `src/marketing_campaign_critic/crew.py` to add your own logic, tools and specific args
-- Modify `src/marketing_campaign_critic/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the marketing_campaign_critic Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The marketing_campaign_critic Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the MarketingCampaignCritic Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+This README template includes basic instructions and descriptions. Adjust the content to include any specific installation steps, external service configurations, or environmental variables that might be necessary for your application.
