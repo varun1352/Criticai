@@ -68,7 +68,21 @@
                 <button type="button" class="cta-button back-button">Back</button>
                 <button type="button" class="cta-button next-button">Next</button>
             </div>
-    
+            <!-- Step 4: PDFs and Image uploads -->
+            <div class="form-step">
+                <h2>Optional Uploads</h2>
+                
+                <!-- Image Upload -->
+                <label for="image_file">Upload Image (optional):</label>
+                <input type="file" id="image_file" name="image_file" accept="image/*">
+                
+                <!-- PDF Upload -->
+                <label for="pdf_file">Upload PDF (optional):</label>
+                <input type="file" id="pdf_file" name="pdf_file" accept="application/pdf">
+                
+                <button type="button" class="cta-button back-button">Back</button>
+                <button type="button" class="cta-button next-button">Next</button>
+            </div>
             <!-- Step 4: Select Agent -->
             <div class="form-step">
                 <h2>Select Agent</h2>
@@ -80,7 +94,9 @@
                     <option value="middle_income_reviewer">Middle Income Reviewer</option>
                     <option value="diverse_background_reviewer">Diverse Background Reviewer</option>
                 </select>
-                <button type="button" class="cta-button">Customize or Add New Agent</button>
+                <button type="button" class="cta-button" onclick="addAgent()">Add New Agent</button>
+    
+                <div id="agent-container"></div>
     
                 <button type="button" class="cta-button back-button">Back</button>
                 <button type="submit" class="cta-button">Submit Campaign</button>
@@ -91,16 +107,26 @@
                 const agentContainer = document.getElementById("agent-container");
                 const agentDiv = document.createElement("div");
                 agentDiv.classList.add("agent");
-    
+        
+                // Add unique Agent Name, Role, Goal, and Backstory inputs
                 agentDiv.innerHTML = `
-                    <input type="text" name="agent_name[]" placeholder="Agent Name" required>
-                    <input type="text" name="agent_role[]" placeholder="Role" required>
-                    <input type="text" name="agent_goal[]" placeholder="Goal" required>
-                    <button type="button" onclick="removeAgent(this)">X</button>
+                <label for="agent_name[]">Agent Name:</label>
+                <input type="text" name="agent_name[]" placeholder="Enter Agent Name" required />
+
+                <label for="agent_role[]">Agent Role:</label>
+                <input type="text" name="agent_role[]" placeholder="Enter Agent Role" required />
+
+                <label for="agent_goal[]">Agent Goal:</label>
+                <input type="text" name="agent_goal[]" placeholder="Enter Agent Goal" required />
+
+                <label for="agent_backstory[]">Agent Backstory:</label>
+                <textarea name="agent_backstory[]" placeholder="Enter Agent Backstory" required></textarea>
+
+                <button type="button" onclick="removeAgent(this)">Remove</button>
                 `;
                 agentContainer.appendChild(agentDiv);
             }
-    
+        
             function removeAgent(button) {
                 button.parentElement.remove();
             }

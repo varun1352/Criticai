@@ -67,10 +67,23 @@ def run_crew():
     agent_backstories = request.form.getlist('agent_backstory[]')
 
     # Save the image if provided
+    image_file = request.files.get('image_file')  # Image file
+    pdf_file = request.files.get('pdf_file')  # PDF file
+
+    # Save the image file if provided
     image_path = None
-    if image_file:
-        image_path = os.path.join("output", "campaign_image.jpg")
+    if image_file and image_file.filename:
+        image_path = os.path.join("src/marketing_campaign_critic/web/inputs/images", "campaign_image.jpg")
         image_file.save(image_path)
+        logging.info(f"Image file saved at: {image_path}")
+
+    # Save the PDF file if provided
+    pdf_path = None
+    if pdf_file and pdf_file.filename:
+        pdf_path = os.path.join("src/marketing_campaign_critic/web/inputs/pdfs", "campaign_details.pdf")
+        pdf_file.save(pdf_path)
+        logging.info(f"PDF file saved at: {pdf_path}")
+
 
     # Construct agent data (flat dictionary structure)
     agent_data = {}
@@ -159,7 +172,7 @@ def run_crew():
             - **Appeal and Engagement**: Evaluate how engaging the campaign is, considering the target audience's interests and your viewpoint.
             - **Recommendations for Improvement**: Offer actionable suggestions for enhancing the campaign, drawing from your own professional background.
             
-            Please use only the provided campaign details and any images (if available) to guide your review. Your analysis should be thoughtful, concise, and based on your specific perspective.
+            Please use only the provided campaign details and any images and PDFs(if available) to guide your review. Your analysis should be thoughtful, concise, and based on your specific perspective.
             """
         }
     }
@@ -169,7 +182,7 @@ def run_crew():
 
     # Run the crew
     
-    run(inputs=inputs, image_path=image_path)  # This should now pass the inputs correctly
+    run(inputs=inputs, image_path=image_path, pdf_path=pdf_path)  # This should now pass the inputs correctly
     # except Exception as e:
     #     logging.error(f"An error occurred: {e}")
     #     print(f"An error occurred: {e}")

@@ -1,57 +1,28 @@
 tasks:
   campaign_review:
-    description: "\n            Analyze the marketing campaign 'NextGen HealthTrack\
-      \ Launch' by Quantum Fitness for their product 'NextGen HealthTrack'.\n    \
-      \        The campaign is targeted at 26-35 audiences in Global, with a focus\
-      \ on urban centers in the United States, Canada, the United Kingdom, and Australia\
-      \ with interests in Fitness, technology, wellness, outdoor activities, personal\
-      \ health management..\n            \n            As an agent with your backstory,\
-      \ your review should reflect your unique perspective. \n            Please make\
-      \ sure to evaluate the campaign from the angle of your backstory and role without\
-      \ introducing general assumptions.\n            \n            **Campaign Overview:**\n\
-      \            - **Campaign Name**: NextGen HealthTrack Launch\n            -\
-      \ **Company**: Quantum Fitness\n            - **Campaign Description**: Introducing\
-      \ the NextGen HealthTrack\u2014a cutting-edge fitness wearable that blends style\
-      \ with functionality. Launched in Spring 2025, the NextGen HealthTrack is designed\
-      \ to support a dynamic lifestyle, offering real-time health monitoring, activity\
-      \ tracking, and personalized fitness coaching. Our campaign focuses on promoting\
-      \ wellness through technology, targeting health-conscious individuals who value\
-      \ precision and usability in fitness gadgets.\"\r\n\r\nMarketing Goals\r\nIncrease\
-      \ Brand Awareness: Leverage digital marketing channels such as social media,\
-      \ influencers, and online ads to build brand recognition.\r\nDrive Pre-orders:\
-      \ Establish an early adopter program with incentives for pre-orders to boost\
-      \ initial sales figures.\r\nEngage with Community: Host webinars and live Q&A\
-      \ sessions with product developers to engage the community and gather feedback\
-      \ for future improvements.\r\nEducational Content: Produce high-quality, informative\
-      \ content that explains the scientific benefits behind the wearable's features,\
-      \ demonstrating its value to potential customers.\r\nCampaign Strategies\r\n\
-      Influencer Partnerships: Collaborate with fitness influencers and health experts\
-      \ to create authentic content around the lifestyle benefits of the HealthTrack\
-      \ wearable.\r\nTargeted Advertising: Use targeted ads on platforms like Instagram,\
-      \ YouTube, and health-focused podcasts to reach the specific demographics interested\
-      \ in advanced fitness technology.\r\nCommunity Challenges: Launch a \"Quantum\
-      \ Fitness Challenge\" encouraging users to achieve specific health goals using\
-      \ the HealthTrack, with prizes for top achievers.\r\nSustainability Angle: Emphasize\
-      \ the product's use of sustainable materials and responsible manufacturing processes\
-      \ to appeal to eco-conscious consumers.\r\n\n            \n            **Product\
-      \ Details:**\n            - **Product Name**: NextGen HealthTrack\n        \
-      \    - **Product Description**: The NextGen HealthTrack wearable is the latest\
-      \ innovation from Quantum Fitness, featuring advanced biometric sensors that\
-      \ monitor heart rate variability, oxygen saturation, sleep quality, and stress\
-      \ levels. Encased in a sleek, waterproof design, the HealthTrack is compatible\
-      \ with multiple sports modes and integrates seamlessly with smartphones to provide\
-      \ actionable insights and tailored workout recommendations. Its long battery\
-      \ life and quick-charge technology ensure that users stay connected and healthy,\
-      \ no matter where their adventures take them.\n            \n            **Target\
-      \ Audience:**\n            - **Age Group**: 26-35\n            - **Location**:\
-      \ Global, with a focus on urban centers in the United States, Canada, the United\
-      \ Kingdom, and Australia\n            - **Interests**: Fitness, technology,\
-      \ wellness, outdoor activities, personal health management.\n            - **Income\
-      \ Bracket**: High\n            \n            Your role requires you to assess\
-      \ this campaign based on how it resonates with the target audience from your\
-      \ unique perspective. \n            Please analyze this campaign's strengths,\
-      \ weaknesses, appeal, and engagement through the lens of your personal backstory\
-      \ and role.\n            "
+    description: "\n            Analyze the marketing campaign 'Eco Friendly Spring\
+      \ Launch' by GreenLeaf Products for their product 'GreenLife Reusable Bottles'.\n\
+      \            The campaign is targeted at 18-25 audiences in North America with\
+      \ interests in Eco-friendly lifestyle, sustainable products, health and wellness.\n\
+      \            \n            As an agent with your backstory, your review should\
+      \ reflect your unique perspective. \n            Please make sure to evaluate\
+      \ the campaign from the angle of your backstory and role without introducing\
+      \ general assumptions.\n            \n            **Campaign Overview:**\n \
+      \           - **Campaign Name**: Eco Friendly Spring Launch\n            - **Company**:\
+      \ GreenLeaf Products\n            - **Campaign Description**: Promoting eco-friendly\
+      \ products for spring 2025. Focuses on sustainability, natural ingredients,\
+      \ and recyclable packaging.\n            \n            **Product Details:**\n\
+      \            - **Product Name**: GreenLife Reusable Bottles\n            - **Product\
+      \ Description**: Reusable bottles made from recycled materials, available in\
+      \ eco-friendly packaging.\n            \n            **Target Audience:**\n\
+      \            - **Age Group**: 18-25\n            - **Location**: North America\n\
+      \            - **Interests**: Eco-friendly lifestyle, sustainable products,\
+      \ health and wellness\n            - **Income Bracket**: Middle\n          \
+      \  \n            Your role requires you to assess this campaign based on how\
+      \ it resonates with the target audience from your unique perspective. \n   \
+      \         Please analyze this campaign's strengths, weaknesses, appeal, and\
+      \ engagement through the lens of your personal backstory and role.\n       \
+      \     "
     expected_output: "\n            Provide a structured markdown report following\
       \ this format(please dont change the format of the report that your produce\
       \ and follow this):\n\n            - **Score**: Provide a score (out of 10)\
@@ -64,6 +35,6 @@ tasks:
       \ and your viewpoint.\n            - **Recommendations for Improvement**: Offer\
       \ actionable suggestions for enhancing the campaign, drawing from your own professional\
       \ background.\n            \n            Please use only the provided campaign\
-      \ details and any images (if available) to guide your review. Your analysis\
+      \ details and any images and PDFs(if available) to guide your review. Your analysis\
       \ should be thoughtful, concise, and based on your specific perspective.\n \
       \           "

@@ -17,11 +17,12 @@ llm = LLM(
 class MarketingCampaignCriticCrew:
     """Crew for critiquing a marketing campaign with demographic-specific agents and a Master Agent."""
 
-    def __init__(self, image_path=None, pdf_path=None, agents_config=None):
+    def __init__(self, image_path=None, pdf_path=None, agents_config=None, inputs = {}):
         super().__init__()
         self.image_path = image_path
         self.pdf_path = pdf_path
         self.agents_config = agents_config or {}
+        self.inputs = inputs
 
         # Load tasks.yaml
         with open('src/marketing_campaign_critic/config/tasks.yaml', 'r') as task_file:
@@ -84,12 +85,83 @@ class MarketingCampaignCriticCrew:
         """Task for the Master Agent to summarize the overall review."""
         return Task(
             config={
-                "description": """Generate a comprehensive summary review of the reviews given by each of the other agents and if there are no other agents provide an independent evaluation.""",
-                "expected_output": "An unbiased markdown report on the campaign's strengths and weaknesses."
+                "description": f"""
+                You are tasked with generating a comprehensive and detailed summary review of the marketing campaign. Your task includes:
+
+                1. **Inputs Summary**: Provide a clear summary of the details provided for the campaign. This includes the campaign name, company name, product details, target audience, and additional information like the image and PDF if available. 
+                    - If an image is provided, describe its content and how it aligns with the campaign.
+                    - If a PDF is provided, summarize the main points covered in the document.
+                
+                2. **Agent Feedback Aggregation**: Collect and aggregate the reviews provided by all other agents. This includes:
+                    - Listing the scores given by each agent and calculating the average score.
+                    - Highlighting key strengths, weaknesses, and recommendations mentioned by the agents.
+
+                3. **Independent Evaluation**: If no other agents have provided reviews, generate an independent evaluation of the campaign based on the provided inputs. Use the same structure as an individual agent review.
+
+                4. **Comprehensive Summary**: Provide your final, unbiased review of the campaign. This should:
+                    - Synthesize the agent reviews (if available).
+                    - Highlight the campaign's overall strengths and weaknesses.
+                    - Provide actionable recommendations for improving the campaign.
+
+                Please format the report as a structured markdown document using the following format:
+
+                ```
+                # Master Reviewer Summary
+
+                ## Inputs Summary
+                - **Campaign Name**: {self.inputs['campaign_name']}
+                - **Company Name**: {self.inputs['company_name']}
+                - ** Campaign Description**: {self.inputs['campaign_description']}
+                - **Product Name**: {self.inputs['product_name']}
+                - **Product Description**: {self.inputs['product_description']}
+                - **Target Audience**:
+                    - Age Group: {self.inputs['age_group']}
+                    - Location: {self.inputs['location']}
+                    - Interests: {self.inputs['interests']}
+                    - Income Bracket: {self.inputs['income_bracket']}
+                - **Image Description**: [Brief description of the provided image or 'No image provided']
+                - **PDF Summary**: [Brief summary of the PDF content or 'No PDF provided']
+
+                ## Agent Feedback
+                - **Scores**:
+                    - Agent 1: [Score]
+                    - Agent 2: [Score]
+                    - ...
+                - **Average Score**: [Calculated Average]
+                - **Key Strengths**: 
+                    - [Key strength 1]
+                    - [Key strength 2]
+                - **Key Weaknesses**:
+                    - [Key weakness 1]
+                    - [Key weakness 2]
+                - **Recommendations**:
+                    - [Recommendation 1]
+                    - [Recommendation 2]
+
+                ## Independent Evaluation (if applicable)
+                - **Score**: [Score out of 10]
+                - **Strengths**: [Strengths based on provided inputs]
+                - **Weaknesses**: [Weaknesses based on provided inputs]
+                - **Recommendations**: [Suggestions for improvement]
+
+                ## Final Summary
+                - **Overall Strengths**: [Summary of strengths]
+                - **Overall Weaknesses**: [Summary of weaknesses]
+                - **Actionable Recommendations**: [Final suggestions for improvement]
+                ```
+                """,
+                "expected_output": """
+                A detailed markdown report including:
+                - Summary of campaign inputs (details, image, PDF).
+                - Aggregated scores and insights from all agents.
+                - Independent evaluation if no agent reviews are available.
+                - Final comprehensive summary including strengths, weaknesses, and actionable recommendations.
+                """
             },
             agent=self.master_reviewer(),
             output_file='output/master_feedback.md'
         )
+
 
     def user_agent_tasks(self) -> list[Task]:
         """Creates tasks for each user-defined agent."""

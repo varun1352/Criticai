@@ -242,7 +242,7 @@ header .nav-list {
     margin: var(--spacing-md) auto; /* Adjust vertical space */
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
-    max-width: 600px; 
+    width: 800px; 
 }
 
 
@@ -420,7 +420,6 @@ body.dark-mode .card-body {
     align-items: center;
     height: calc(100vh - var(--spacing-lg)); /* Adjust to fit within the viewport */
     padding: var(--spacing-lg); /* Ensure padding for content */
-    overflow-y: hidden;
     box-sizing: border-box;
     border-radius: 12px;
     background: linear-gradient(135deg, rgba(45, 59, 240, 0.05), rgba(139, 92, 246, 0.05));
@@ -501,7 +500,7 @@ body.dark-mode {
     color: var(--text-dark);
 }
 
-body.dark-mode .form-section {
+body.dark-mode .form-section #campaignFrom{
     background-color: #333; /* Darker background for dark mode */
     color: #fff; /* Lighter text for contrast */
 }
@@ -601,6 +600,10 @@ body.dark-mode .cta-button:hover {
     animation: slideIn 0.3s ease-out;
 }
 
+body.dark-mode .agent {
+    background: var(--dark-bg-secondary);    
+}
+
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -617,8 +620,6 @@ body.dark-mode .cta-button:hover {
 }
 
 .agent button {
-    width: 36px;
-    height: 36px;
     border-radius: 50%;
     background-color: #ef4444;
     color: white;
@@ -629,7 +630,6 @@ body.dark-mode .cta-button:hover {
 
 .agent button:hover {
     background-color: #dc2626;
-    transform: rotate(90deg);
 }
 
 .features-section {
@@ -639,6 +639,11 @@ body.dark-mode .cta-button:hover {
     border-radius: 12px;
     box-shadow: var(--shadow-md);
     text-align: center;
+}
+
+body.dark-mode .features-section {
+    background: var(--dark-bg-secondary);
+    color: var(--text-dark);
 }
 
 .features-container {
@@ -671,6 +676,12 @@ body.dark-mode .cta-button:hover {
     color: var(--text-light);
 }
 
+body.dark-mode .feature {
+    background: var(--dark-bg-primary);
+    color: var(--text-dark);    
+}
+
+body.dark
 
 /* Logo Styles */
 .logo {
@@ -678,7 +689,6 @@ body.dark-mode .cta-button:hover {
     font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;
-    margin-left: var(--spacing-lg);
 }
 
 /* Navigation Menu Styles */
@@ -865,6 +875,11 @@ body.dark-mode footer .footer-nav a:hover {
     display: flex; /* Show the active step */
 }
 
+body.dark-mode .form-step{
+    background: var(--bg-dark);
+
+}
+
 /* Optional Animation */
 @keyframes fadeIn {
     from {
@@ -1037,4 +1052,76 @@ body.dark-mode .markdown-content {
 .card {
     position: relative;
     z-index: 1;
+}
+
+/* Styles for the agent container */
+#agent-container {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Style for each agent input group */
+.agent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+/* Labels for agent fields */
+.agent label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input fields for agent details */
+.agent input,
+.agent textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fefefe;
+}
+
+/* Styling for the remove button */
+.agent button {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background-color: #ff5f5f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.agent button:hover {
+    background-color: #e04e4e;
+}
+
+button.back-button,
+button.next-button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ccc;
+    color: #333;
+    cursor: pointer;
+}
+
+button.back-button:hover,
+button.next-button:hover {
+    background-color: #bbb;
+    color: white;
 }

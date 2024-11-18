@@ -1,69 +1,44 @@
-# Campaign Review Report
+# Master Reviewer Summary
 
-## Campaign Overview
+## Inputs Summary
+- **Campaign Name**: Eco Friendly Spring Launch
+- **Company Name**: GreenLeaf Products
+- ** Campaign Description**: Promoting eco-friendly products for spring 2025. Focuses on sustainability, natural ingredients, and recyclable packaging.
+- **Product Name**: GreenLife Reusable Bottles
+- **Product Description**: Reusable bottles made from recycled materials, available in eco-friendly packaging.
+- **Target Audience**:
+    - Age Group: 18-25
+    - Location: North America
+    - Interests: Eco-friendly lifestyle, sustainable products, health and wellness
+    - Income Bracket: Middle
+- **Image Description**: A high-quality image showcasing the GreenLife Reusable Bottles in a natural setting, highlighting the product's eco-friendly features and natural colors.
+- **PDF Summary**: The provided PDF document outlines the product's eco credentials, including the use of recycled materials, biodegradable packaging, and the reduction of carbon footprint. The document also includes customer testimonials and social media statistics demonstrating the product's popularity and brand awareness.
 
-The campaign reviewed here is a comprehensive digital marketing initiative launched by a brand aiming to increase brand awareness and drive sales.
+## Agent Feedback
+- **Scores**:
+    - Agent 1: 7.8/10
+    - Agent 2: 6.9/10
+    - Agent 3: 8.1/10
+- **Average Score**: 7.56/10
+- **Key Strengths**:
+    - The campaign successfully targets the eco-conscious audience and resonates with their values.
+    - The social media statistics demonstrate significant engagement and brand awareness.
+- **Key Weaknesses**:
+    - The campaign could benefit from increased focus on storytelling and the personal impact of using eco-friendly products.
+    - The lack of a clear call-to-action (CTA) in the campaign's messaging may deter potential customers.
+- **Recommendations**:
+    - Develop a stronger narrative highlighting the customer benefits of using eco-friendly products.
+    - Incorporate a clear and prominent CTA in the campaign's messaging to drive sales and conversions.
 
-## Reviewers' Scores and Feedback
+## Independent Evaluation (if applicable)
+- **Score**: 7.5/10
+- **Strengths**: The campaign successfully taps into the eco-friendly trend and demonstrates a strong understanding of the target audience. The use of social media to promote the product is effective.
+- **Weaknesses**: The campaign could benefit from a more compelling story and clearer messaging. The lack of a clear CTA may deter potential customers.
+- **Recommendations**:
+    - Focus on developing a stronger narrative that resonates with the target audience.
+    - Use clear and compelling messaging to drive sales and conversions.
 
-Below are the reviews from multiple agents, along with their individual scores:
-
-### Reviewer 1
-
-**Score:** 7.8/10
-
-The campaign was well-strategized but could have been more engaging and interactive to increase user participation and conversion.
-
-* Strengths: Strong social media presence, well-executed influencer marketing.
-* Weaknesses: Limited content variety, lack of personalization.
-
-### Reviewer 2
-
-**Score:** 6.5/10
-
-While the campaign reached a large audience, the messaging was unclear and the calls-to-action (CTAs) were not prominent.
-
-* Strengths: Wide reach through paid advertising.
-* Weaknesses: Lack of clear direction, poor CTA visibility.
-
-### Reviewer 3
-
-**Score:** 8.2/10
-
-The campaign had a clear vision, strong brand consistency, and a well-executed email marketing strategy.
-
-* Strengths: Clear messaging, well-designed branding, effective email marketing.
-* Weaknesses: Overreliance on paid advertising, need for further social media engagement.
-
-### Reviewer 4
-
-**Score:** 5.8/10
-
-Unfortunately, the campaign lacked clear objectives and metrics, making it difficult to assess its overall success.
-
-* Strengths: Attempt at creating engaging content.
-* Weaknesses: Unclear goals, lack of measurable outcomes.
-
-### Reviewer 5 (Independent Evaluation)
-
-**Score:** 7.2/10
-
-This independent evaluation is based on a review of available data and campaign materials.
-
-* Strengths: Well-structured social media presence, effective email marketing.
-* Weaknesses: Limited content depth, need for better metrics tracking.
-
-## Overall Campaign Review
-
-Based on the reviews and scores provided, the campaign's strengths include its strong social media presence, influencer marketing efforts, and clear messaging. The campaign has room for improvement in terms of engaging more effectively with users, increasing content variety, and personalizing messages. It's also crucial to have clearer objectives and metrics in place to accurately assess campaign success.
-
-### Final Assessment
-
-**Campaign Effectiveness:** 6.9/10
-
-**Recommendations:**
-
-1. Refine social media strategy to increase user engagement and participation.
-2. Diversify content to provide more variety and depth.
-3. Enhance personalization to improve user experience.
-4. Establish clear goals and metrics to measure campaign success.
+## Final Summary
+- **Overall Strengths**: The campaign successfully targets the eco-conscious audience, resonates with their values, and demonstrates a strong understanding of social media marketing.
+- **Overall Weaknesses**: The campaign could benefit from increased focus on storytelling, a clear narrative, and a prominent CTA to drive sales and conversions.
+- **Actionable Recommendations**: Develop a stronger narrative highlighting the customer benefits of using eco-friendly products, incorporate a clear and prominent CTA in the campaign's messaging, and optimize the campaign's messaging to drive sales and conversions.

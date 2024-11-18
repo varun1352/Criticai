@@ -14,7 +14,7 @@ def run(inputs, image_path=None, pdf_path=None):
     
     
     # Initialize the crew with paths and inputs
-    crew_instance = MarketingCampaignCriticCrew(image_path=image_path, pdf_path=pdf_path)
+    crew_instance = MarketingCampaignCriticCrew(image_path=image_path, pdf_path=pdf_path, inputs=inputs)
     crew_instance.crew().kickoff()
     
 
